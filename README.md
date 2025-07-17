@@ -4,16 +4,6 @@
 
 ### setup qmk
 
-on home directory, clone forked version (that has changes to TAPPING_TERMs of certain keyboards):
-
-```
-git clone git@github.com:sylph01/qmk_firmware.git
-cd qmk_firmware
-git checkout sylph01
-```
-
-then install qmk
-
 - https://docs.qmk.fm/newbs_getting_started
 - https://docs.astral.sh/uv/
   - uses `uv` because the normal procedure gives a `externally-managed-environment` error
@@ -25,10 +15,14 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 qmk setup
 ```
 
+### copy user-specific config
+
+copy `users/sylph01` under `qmk_firmware`. this includes info on tapping term
+
 ### compile
 
 ```
-qmk compile iris/iris-rev6-sylph01.json
+qmk compile -c iris/iris-rev6-sylph01.json
 ```
 
 ### flash
